@@ -46,11 +46,11 @@
     <div class="w-full max-w-xl bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col min-h-[80vh]">
 
         <!-- Header with Title and Search Bar -->
-        <header class="p-6 bg-white border-b border-gray-200 flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-gray-800" data-key="headerTitle">Work Phonebook</h1>
+        <header class="p-6 bg-gradient-to-r from-blue-400 to-blue-600 border-b border-gray-200 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white" data-key="headerTitle">Work Phonebook</h1>
             <div class="flex items-center space-x-4">
                 <button id="langToggleBtn" class="p-2 text-gray-600 hover:text-blue-500 transition-colors">
-                    <i class="fas fa-language text-xl"></i>
+                    <i class="fas fa-language text-white text-md"></i>
                 </button>
             </div>
         </header>
@@ -69,7 +69,7 @@
         </main>
 
         <!-- Footer -->
-        <footer class="p-4 text-center text-gray-500 text-sm border-t border-gray-200">
+        <footer class="p-4 text-center bg-gradient-to-r from-orange-400 to-purple-600 text-white text-sm border-t border-gray-200">
             Developed by Fazley Rabbi
         </footer>
     </div>
@@ -169,6 +169,42 @@
         };  
 
         const contacts = [
+            // {
+            //     name: { en: "", bn: "" },
+            //     job: { en: "", bn: "" },
+            //     phone: "",
+            //     whatsapp: "1556677889",
+            //     facebook: "",
+            //     image: "img/.png",
+            //     description: {
+            //         en: "",
+            //         bn: ""
+            //     }
+            // },
+            {
+                name: { en: "Masud Parvez", bn: "মাসুদ পারভেজ" },
+                job: { en: "Supervisor", bn: "সুপারভাইজার" },
+                phone: "01784676199",
+                whatsapp: "1556677889",
+                facebook: "masud.khan.73744801",
+                image: "img/masud.png",
+                description: {
+                    en: "Masud Parvez is our supervisor. He monitors the production floor, guides the operators, and ensures smooth workflow every day.",
+                    bn: "মাসুদ পারভেজ আমাদের সুপারভাইজার। তিনি প্রোডাকশন ফ্লোর তদারকি করেন, অপারেটরদের গাইড করেন এবং প্রতিদিন কাজের প্রবাহ মসৃণ রাখেন।"
+                }
+            },
+            {
+                name: { en: "Alamgir Hossin", bn: "আলমগির হোসেন" },
+                job: { en: "Trainer", bn: "ট্রেইনার" },
+                phone: "01982837080",
+                whatsapp: "1556677889",
+                facebook: "md.alamgir.55629",
+                image: "img/alamgir.png",
+                description: {
+                    en: "Alamgir Hossain is trainer. He provides training, teaches machine handling, and helps operators improve their skills.",
+                    bn: "আলমগির হোসেন আমাদের ট্রেইনার। তিনি প্রশিক্ষণ দেন, মেশিন পরিচালনা শেখান এবং অপারেটরদের দক্ষতা বাড়াতে সহায়তা করেন।"
+                }
+            },  
             {
                 name: { en: "Fazle Rabbi", bn: "ফজলে রাব্বি" },
                 job: { en: "Operator, Pads", bn: "অপারেটর, প্যাডস" },
@@ -177,8 +213,8 @@
                 facebook: "f.rabbi.90",
                 image: "img/Rabbi.png",
                 description: {
-                    en: "Dedicated full-stack developer with over 5 years of experience in web application development. Specializes in Node.js and React.",
-                    bn: "ওয়েব অ্যাপ্লিকেশন ডেভেলপমেন্টে ৫ বছরের বেশি অভিজ্ঞতা সম্পন্ন একজন নিবেদিতপ্রাণ ফুল-স্ট্যাক ডেভেলপার। Node.js এবং React-এ বিশেষজ্ঞ।"
+                    en: "Works as a Pad Machine Operator. On Thursdays, he also operates the Rib Machine. He is passionate about technology and developed this Phonebook App for his colleagues.",
+                    bn: "প্যাড মেশিন অপারেটর হিসেবে নিয়োজিত আছেন। প্রতি বৃহঃবার তিনি রিব মেশিনও চালান। তিনি প্রযুক্তির প্রতি আগ্রহী এবং সহকর্মীদের জন্য এই ফোনবুক অ্যাপটি নিজেই ডেভেলপ করেছেন।"
                 }
             },
             {
@@ -189,8 +225,8 @@
                 facebook: "firozali7860",
                 image: "img/Firoz.png",
                 description: {
-                    en: "An experienced product manager focused on user-centric design and agile methodologies. Passionate about creating intuitive and impactful products.",
-                    bn: "একজন অভিজ্ঞ পণ্য ব্যবস্থাপক যিনি ব্যবহারকারী-কেন্দ্রিক ডিজাইন এবং অ্যাজাইল পদ্ধতি নিয়ে কাজ করেন। স্বজ্ঞাত এবং কার্যকর পণ্য তৈরিতে আগ্রহী।"
+                    en: "Firoz Ali operates the Rib machine in the factory. He is skilled in handling rib fabrics efficiently. Thursday is his weekly off day.",
+                    bn: "ফিরোজ আলী ফ্যাক্টরিতে রিব মেশিন চালান। তিনি দক্ষভাবে রিব কাপড় পরিচালনা করেন। বৃহঃবার তার সাপ্তাহিক ছুটির দিন।"
                 }
             },
             {
@@ -201,8 +237,8 @@
                 facebook: "sk.shakil.hasan.628373",
                 image: "img/shakil.png",
                 description: {
-                    en: "Creative designer with a keen eye for detail. Specializes in creating beautiful and functional interfaces that enhance the user experience.",
-                    bn: "বিশদ বিষয়ে তীক্ষ্ণ নজর রয়েছে এমন একজন সৃজনশীল ডিজাইনার। সুন্দর এবং কার্যকরী ইন্টারফেস তৈরিতে বিশেষজ্ঞ যা ব্যবহারকারীর অভিজ্ঞতাকে উন্নত করে।"
+                    en: "Sakil Hasan works as a Pad Machine Operator in section 12. He is responsible for smooth machine operation and production. Thursday is his weekly off day.",
+                    bn: "সাকিল হাসান ১২ নং সেকশনে প্যাড মেশিন চালান। তিনি মেশিন সঠিকভাবে চালানো ও উৎপাদনের দায়িত্বে আছেন। বৃহঃবার তার সাপ্তাহিক ছুটির দিন।"
                 }   
             },
             {
@@ -213,8 +249,8 @@
                 facebook: "mdibrahim.hossan.142",
                 image: "img/ibrahim.png",
                 description: {
-                    en: "Expert in machine learning and data analysis. Helps companies turn raw data into actionable insights to drive business growth.",
-                    bn: "মেশিন লার্নিং এবং ডেটা বিশ্লেষণে বিশেষজ্ঞ। কোম্পানিগুলোকে কাঁচা ডেটাকে কার্যকর তথ্যে রূপান্তরিত করে ব্যবসার বৃদ্ধি ঘটাতে সাহায্য করেন।"
+                    en: "Ibrahim Hossain operates machine number 10. He mainly works with white fabrics. Friday is his weekly off day.",
+                    bn: "ইব্রাহিম হোসেন ১০ নং মেশিন চালান। তিনি মূলত সাদা কাপড় পরিচালনা করেন। শুক্রবার তার সাপ্তাহিক ছুটির দিন।"
                 }
             }
         ];
