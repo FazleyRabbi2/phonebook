@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,13 +41,15 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
 
     <!-- Main App Container -->
     <div class="w-full max-w-xl bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col min-h-[80vh]">
 
         <!-- Header with Title and Search Bar -->
-        <header class="p-6 bg-gradient-to-r from-blue-400 to-blue-600 border-b border-gray-200 flex justify-between items-center">
+        <header
+            class="p-6 bg-gradient-to-r from-blue-400 to-blue-600 border-b border-gray-200 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-white" data-key="headerTitle">Work Phonebook</h1>
             <div class="flex items-center space-x-4">
                 <button id="langToggleBtn" class="p-2 text-gray-600 hover:text-blue-500 transition-colors">
@@ -57,7 +60,7 @@
         <div class="p-6 bg-white border-b border-gray-200">
             <div class="relative">
                 <input type="text" id="searchInput" placeholder="Search contacts..." data-key="searchPlaceholder"
-                       class="w-full pl-10 pr-4 py-2 rounded-full bg-gray-100 text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white">
+                    class="w-full pl-10 pr-4 py-2 rounded-full bg-gray-100 text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white">
                 <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
             </div>
         </div>
@@ -69,31 +72,42 @@
         </main>
 
         <!-- Footer -->
-        <footer class="p-4 text-center bg-gradient-to-r from-orange-400 to-purple-600 text-white text-sm border-t border-gray-200">
+        <footer
+            class="p-4 text-center bg-gradient-to-r from-orange-400 to-purple-600 text-white text-sm border-t border-gray-200">
             Developed by Fazley Rabbi
         </footer>
     </div>
 
     <!-- Contact Details Modal -->
-    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden">
-        <div class="bg-white rounded-xl shadow-2xl p-6 relative max-w-sm w-full transform transition-all scale-95 opacity-0 duration-300 ease-in-out" id="contactModalCard">
-            <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors" onclick="hideModal('contactModal')">
+    <div id="contactModal"
+        class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-xl shadow-2xl p-6 relative max-w-sm w-full transform transition-all scale-95 opacity-0 duration-300 ease-in-out"
+            id="contactModalCard">
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                onclick="hideModal('contactModal')">
                 <i class="fas fa-times text-2xl"></i>
             </button>
             <div class="flex flex-col items-center text-center">
-                <img id="modalImage" class="w-32 h-32 rounded-full object-cover mb-4 ring-4 ring-blue-200 ring-offset-2" src="" alt="Contact Profile">
+                <img id="modalImage" class="w-32 h-32 rounded-full object-cover mb-4 ring-4 ring-blue-200 ring-offset-2"
+                    src="" alt="Contact Profile">
                 <h2 id="modalName" class="text-2xl font-bold text-gray-800 mb-1"></h2>
                 <p id="modalJob" class="text-gray-500 mb-4"></p>
                 <p id="modalDescription" class="text-gray-600 mb-6 text-center"></p>
 
                 <div class="flex flex-col w-full space-y-3">
-                    <a id="modalPhone" class="bg-blue-500 text-white rounded-lg py-3 px-6 text-center font-semibold hover:bg-blue-600 transition-colors" href="#">
+                    <a id="modalPhone"
+                        class="bg-blue-500 text-white rounded-lg py-3 px-6 text-center font-semibold hover:bg-blue-600 transition-colors"
+                        href="#">
                         <i class="fas fa-phone mr-2"></i> <span data-key="callButton">Call</span>
                     </a>
-                    <a id="modalWhatsApp" class="bg-green-500 text-white rounded-lg py-3 px-6 text-center font-semibold hover:bg-green-600 transition-colors" href="#" target="_blank">
+                    <a id="modalWhatsApp"
+                        class="bg-green-500 text-white rounded-lg py-3 px-6 text-center font-semibold hover:bg-green-600 transition-colors"
+                        href="#" target="_blank">
                         <i class="fab fa-whatsapp mr-2"></i> <span data-key="whatsappButton">WhatsApp</span>
                     </a>
-                    <a id="modalFacebook" class="bg-blue-800 text-white rounded-lg py-3 px-6 text-center font-semibold hover:bg-blue-900 transition-colors" href="#" target="_blank">
+                    <a id="modalFacebook"
+                        class="bg-blue-800 text-white rounded-lg py-3 px-6 text-center font-semibold hover:bg-blue-900 transition-colors"
+                        href="#" target="_blank">
                         <i class="fab fa-facebook-f mr-2"></i> <span data-key="facebookButton">Facebook</span>
                     </a>
                 </div>
@@ -103,29 +117,33 @@
 
     <!-- Add Number Form Modal -->
     <div id="addModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden">
-        <div class="bg-white rounded-xl shadow-2xl p-6 relative max-w-sm w-full transform transition-all scale-95 opacity-0 duration-300 ease-in-out" id="addModalCard">
-            <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors" onclick="hideModal('addModal')">
+        <div class="bg-white rounded-xl shadow-2xl p-6 relative max-w-sm w-full transform transition-all scale-95 opacity-0 duration-300 ease-in-out"
+            id="addModalCard">
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                onclick="hideModal('addModal')">
                 <i class="fas fa-times text-2xl"></i>
             </button>
-            <h2 class="text-2xl font-bold text-gray-800 text-center mb-6" data-key="requestTitle">Request to Add Number</h2>
+            <h2 class="text-2xl font-bold text-gray-800 text-center mb-6" data-key="requestTitle">Request to Add Number
+            </h2>
             <form action="https://formsubmit.co/fazleyrabbi426@gmail.com" method="POST">
                 <div class="mb-4">
                     <label for="name" class="block text-gray-700 font-medium mb-1" data-key="nameLabel">Name</label>
                     <input type="text" id="name" name="name" required
-                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
                 <div class="mb-4">
                     <label for="phone" class="block text-gray-700 font-medium mb-1" data-key="phoneLabel">Phone</label>
                     <input type="tel" id="phone" name="phone" required
-                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
                 <div class="mb-6">
                     <label for="email" class="block text-gray-700 font-medium mb-1" data-key="emailLabel">Email</label>
                     <input type="email" id="email" name="email" required
-                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
                 <button type="submit"
-                        class="w-full bg-blue-500 text-white rounded-lg py-3 font-semibold hover:bg-blue-600 transition-colors" data-key="submitButton">
+                    class="w-full bg-blue-500 text-white rounded-lg py-3 font-semibold hover:bg-blue-600 transition-colors"
+                    data-key="submitButton">
                     Submit Request
                 </button>
             </form>
@@ -133,7 +151,8 @@
     </div>
 
     <!-- Floating Action Button -->
-    <button id="addButton" class="fixed bottom-8 right-8 bg-blue-500 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-blue-600 transition-colors z-40">
+    <button id="addButton"
+        class="fixed bottom-8 right-8 bg-blue-500 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-blue-600 transition-colors z-40">
         <i class="fas fa-plus"></i>
     </button>
 
@@ -166,7 +185,7 @@
                 emailLabel: "ইমেল",
                 submitButton: "অনুরোধ জমা দিন",
             }
-        };  
+        };
 
         const contacts = [
             // {
@@ -181,6 +200,18 @@
             //         bn: ""
             //     }
             // },
+            {
+                name: { en: "Abu Daud", bn: "আবু দাউদ" },
+                job: { en: "", bn: "কো অর্ডিনেটর" },
+                phone: "01325098430",
+                whatsapp: "1556677889",
+                facebook: "engrabudaud.mollah",
+                image: "img/AbuDaud.png",
+                description: {
+                    en: "",
+                    bn: ""
+                }
+            },
             {
                 name: { en: "Masud Parvez", bn: "মাসুদ পারভেজ" },
                 job: { en: "Supervisor", bn: "সুপারভাইজার" },
@@ -204,7 +235,7 @@
                     en: "Alamgir Hossain is trainer. He provides training, teaches machine handling, and helps operators improve their skills.",
                     bn: "আলমগির হোসেন আমাদের ট্রেইনার। তিনি প্রশিক্ষণ দেন, মেশিন পরিচালনা শেখান এবং অপারেটরদের দক্ষতা বাড়াতে সহায়তা করেন।"
                 }
-            },  
+            },
             {
                 name: { en: "Fazle Rabbi", bn: "ফজলে রাব্বি" },
                 job: { en: "Operator, Pads", bn: "অপারেটর, প্যাডস" },
@@ -239,7 +270,7 @@
                 description: {
                     en: "Sakil Hasan works as a Pad Machine Operator in section 12. He is responsible for smooth machine operation and production. Thursday is his weekly off day.",
                     bn: "সাকিল হাসান ১২ নং সেকশনে প্যাড মেশিন চালান। তিনি মেশিন সঠিকভাবে চালানো ও উৎপাদনের দায়িত্বে আছেন। বৃহঃবার তার সাপ্তাহিক ছুটির দিন।"
-                }   
+                }
             },
             {
                 name: { en: "Ibrahim Hossan", bn: "ইব্রাহিম হোসেন" },
@@ -251,6 +282,246 @@
                 description: {
                     en: "Ibrahim Hossain operates machine number 10. He mainly works with white fabrics. Friday is his weekly off day.",
                     bn: "ইব্রাহিম হোসেন ১০ নং মেশিন চালান। তিনি মূলত সাদা কাপড় পরিচালনা করেন। শুক্রবার তার সাপ্তাহিক ছুটির দিন।"
+                }
+            },
+            {
+                name: { en: "Jakirul", bn: "জাকিরুল" },
+                job: { en: "Operator, Pad M-1", bn: "অপারেটর, প্যাড মেশিন-১" },
+                phone: "01936251411",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Jakirul.png",
+                description: {
+                    en: "Works as an operator on Pad Machine-1.",
+                    bn: "প্যাড মেশিন-১ এ অপারেটর হিসেবে কাজ করেন।"
+                }
+            },
+            {
+                name: { en: "Shahin Islam", bn: "শাহিন ইসলাম" },
+                job: { en: "Operator, Pad M-2", bn: "অপারেটর, প্যাড মেশিন-২" },
+                phone: "01990070263",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Shahin.png",
+                description: {
+                    en: "Operator on Pad Machine-2.",
+                    bn: "প্যাড মেশিন-২ এর অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Azizul Islam", bn: "আজিজুল ইসলাম" },
+                job: { en: "Operator, Pad M-2", bn: "অপারেটর, প্যাড মেশিন-২" },
+                phone: "01884405087",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Azizul.png",
+                description: {
+                    en: "Works on Pad Machine-2, mostly with white fabric.",
+                    bn: "প্যাড মেশিন-২ এ কাজ করেন, মূলত সাদা কাপড় চালান।"
+                }
+            },
+            {
+                name: { en: "Mohidur Rahman", bn: "মহিদুর রহমান" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01822082257",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Mohidur.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Moksadul Noyon", bn: "মোকসাদুল নয়ন" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01875323604",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Noyon.png",
+                description: {
+                    en: "Dedicated operator.",
+                    bn: "একজন পরিশ্রমী অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Motin", bn: "মতিন" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01362694686",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Motin.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Ibrahim", bn: "ইব্রাহিম" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01705788772",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Ibrohim.png",
+                description: {
+                    en: "Operator, skilled in handling different fabrics.",
+                    bn: "অপারেটর, বিভিন্ন কাপড় চালনায় দক্ষ।"
+                }
+            },
+            {
+                name: { en: "Anata", bn: "আনাতা" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01929720988",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Anata.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Yousuf Mondul", bn: "ইউসুফ মন্ডল" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01990612211",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Yousuf.png",
+                description: {
+                    en: "Operator with years of experience.",
+                    bn: "অভিজ্ঞ অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Himel", bn: "হিমেল" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01797710684",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Himel.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Kamrul Islam", bn: "কামরুল ইসলাম" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01916224506",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Kamrul.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Yesin", bn: "ইয়াসিন" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01996728284",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Yesin.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Jibon", bn: "জীবন" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01781309392",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Ruhin.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Raju", bn: "রাজু" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01709487837",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Raju.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Halim", bn: "হালিম" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "0161203586 / 01917636889",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Halim.png",
+                description: {
+                    en: "Experienced operator.",
+                    bn: "অভিজ্ঞ অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Sabbir", bn: "সাব্বির" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "0160693520",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Sabbir.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Moklasur", bn: "মোকলেছুর" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "01889575843",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Moklasur.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Anower", bn: "আনোয়ার" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "013168523584",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Anower.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Fazlur Rahman", bn: "ফজলুর রহমান" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "013085097592 / 01885975562",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Fazlur.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
+                }
+            },
+            {
+                name: { en: "Jibon", bn: "জীবন" },
+                job: { en: "Operator", bn: "অপারেটর" },
+                phone: "017922926249 / 01885975562",
+                whatsapp: "",
+                facebook: "",
+                image: "img/Jibon.png",
+                description: {
+                    en: "Machine operator.",
+                    bn: "মেশিন অপারেটর।"
                 }
             }
         ];
@@ -386,4 +657,5 @@
 
     </script>
 </body>
+
 </html>
